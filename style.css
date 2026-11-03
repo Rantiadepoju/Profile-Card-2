@@ -1,0 +1,203 @@
+ :root {
+            color-scheme: light;
+            --ink: #202522;
+            --muted: #68716c;
+            --paper: #fffefa;
+            --line: #e8e7df;
+            --accent: #d85c43;
+            --accent-dark: #b94430;
+            --facebook-blue: #1877f2;
+            --twitter-blue: #1da1f2;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            height: 100dvh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 12px 18px;
+            overflow: hidden;
+            color: var(--ink);
+            background-color: #f3efe8;
+            background-image: radial-gradient(#d8d5cc 0.7px, transparent 0.7px);
+            background-size: 18px 18px;
+            font-family: "Trebuchet MS", Verdana, sans-serif;
+        }
+
+        .profile-card {
+            width: min(100%, 390px);
+            overflow: hidden;
+            background: var(--paper);
+            border: 1px solid rgba(32, 37, 34, 0.08);
+            border-radius: 13px;
+            box-shadow: 0 22px 55px rgba(53, 47, 37, 0.13);
+            animation: arrive 500ms ease-out both;
+        }
+
+        .cover {
+            position: relative;
+            height: 130px;
+            background: var(--facebook-blue);
+        }
+
+        .web-icon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            border-radius: 50%;
+        }
+
+        .profile-content { padding: 0 28px 26px; }
+
+        .profile-footer {
+            padding: 10px 16px;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            font-size: 11px;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .identity {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: -48px;
+        }
+
+        .avatar {
+            position: relative;
+            z-index: 1;
+            width: 140px;
+            height: 140px;
+            flex: 0 0 auto;
+            object-fit: cover;
+            border: 5px solid var(--paper);
+            border-radius: 50%;
+            background: #e8dfc6;
+        }
+
+        .availability {
+            margin: 0 0 12px;
+            padding: 7px 10px;
+            color: #3d654c;
+            background: #e6f0e6;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin: 17px 0 4px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .role, .location { margin: 0; color: var(--muted); }
+        .role { font-size: 14px; }
+        .previous-role { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+        .location { margin-top: 9px; font-size: 13px; }
+
+        .bio {
+            margin: 19px 0 21px;
+            color: #3c9b42;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            color: #37433e;
+            border-radius: 50%;
+            transition: transform 150ms ease;
+        }
+
+        .facebook-link { color: #1877f2; }
+        .instagram-link {
+            color: white;
+            background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+        }
+        .linkedin-link { color: #0a66c2; }
+        .social-link:hover { transform: translateY(-2px); }
+        .social-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+        .social-link svg { width: 24px; height: 24px; display: block; }
+
+        .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+
+        .button {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+            border: 1px solid var(--facebook-blue);
+            border-radius: 5px;
+            color: white;
+            background: var(--facebook-blue);
+            font: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+        }
+
+        .button:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+        .button:active { transform: translateY(1px); }
+        .button:focus-visible { outline: 3px solid #202522; outline-offset: 3px; }
+
+        .button-secondary { color: white; background: var(--twitter-blue); border-color: var(--twitter-blue); }
+        .button-secondary:hover { color: white; background: #168bd0; border-color: #168bd0; }
+
+        @keyframes arrive {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 380px) {
+            .profile-content { padding-right: 20px; padding-left: 20px; }
+            h1 { font-size: 27px; }
+        }
+
+        @media (max-height: 650px) {
+            .cover { height: 90px; }
+            .web-icon { top: 10px; right: 10px; width: 36px; height: 36px; }
+            .profile-content { padding-bottom: 14px; }
+            .profile-footer { padding: 7px 12px; }
+            .identity { margin-top: -38px; }
+            .avatar { width: 110px; height: 110px; }
+            .availability { margin-bottom: 8px; padding: 6px 9px; }
+            h1 { margin-top: 10px; font-size: 26px; }
+            .location { margin-top: 5px; }
+            .bio { margin: 10px 0 12px; font-size: 13px; line-height: 1.4; }
+            .social-links { padding: 8px 0; }
+            .actions { margin-top: 12px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+        
