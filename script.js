@@ -1,7 +1,7 @@
 const profile = {
 	name: "Ranti Adepoju",
 	role: "Full-Stack Software Developer",
-	previousRole: "Background: Road Transport & Logistics Professional",
+	previousRole: "Background: Urban Planning/Project Management/Transport & Logistics Professional",
 	location: "Lagos, Nigeria.",
 	bio: "**Architecting Software that solves real-world problem & Translating Human Imagination into Digital Reality**",
 	avatar: "./Ranti%20Dev%20coding%20.jpeg",
